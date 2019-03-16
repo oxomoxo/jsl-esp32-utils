@@ -119,7 +119,7 @@ std::string jsl_str::unescape(std::string& _str)
 		case 'u':
 			++i;
 			std::string hex(i,i+4);
-			std::string::value_type ch = std::strtol(hex.c_str(),NULL,16);
+			std::string::value_type ch = std::strtol(hex.c_str(),nullptr,16);
 			utf8_str(ch,_str);
 			i+=4;
 			break;
@@ -207,7 +207,7 @@ std::string jsl_str::url_decode(const std::string& _src)
 		if(*i == '%')
 		{
 			std::string hex(i+1,i+2);
-			std::string::value_type ch = std::strtol(hex.c_str(),NULL,16);
+			std::string::value_type ch = std::strtol(hex.c_str(),nullptr,16);
 			ret.push_back(ch);
 			i += 3;
 		}
